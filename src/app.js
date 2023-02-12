@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const cardSuits = ["diamonds", "hearts", "spades", "clubs"];
+const cardSuits = ["♦", "♥", "♠", "♣"];
 const cardValue = [
   "A",
   "2",
@@ -25,9 +25,15 @@ const cardValue = [
 window.onload = function() {
   //write your code here
   const randomNumber = Math.floor(Math.random() * 4);
-  console.log(cardSuits[randomNumber]);
-  //console.log(document.querySelector("card top-suit").innerHTML);
-  document.querySelectorAll("span").innertext = cardSuits[randomNumber];
+  const firstSpan = document.getElementById("top-suit");
+  const secondSpan = document.getElementById("bottom-suit");
+  if (randomNumber === 0 || randomNumber === 1) {
+    firstSpan.style.color = "red";
+    secondSpan.style.color = "red";
+  }
+  firstSpan.innerText = cardSuits[randomNumber];
+  secondSpan.innerText = cardSuits[randomNumber];
+
   document.getElementById("cardValue").innerHTML =
     cardValue[Math.floor(Math.random() * 12)];
 };
