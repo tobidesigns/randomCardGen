@@ -25,10 +25,9 @@ const cardValue = [
 window.onload = function() {
   //write your code here
   const randomNumber = Math.floor(Math.random() * 4);
-
-  document.querySelectorAll("card").innerHTML = cardSuits[randomNumber];
+  console.log(cardSuits[randomNumber]);
+  //console.log(document.querySelector("card top-suit").innerHTML);
+  document.querySelectorAll("span").innertext = cardSuits[randomNumber];
   document.getElementById("cardValue").innerHTML =
     cardValue[Math.floor(Math.random() * 12)];
-
-  console.log("Hello Rigo from the console!");
 };

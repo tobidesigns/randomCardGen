@@ -13,13 +13,19 @@ body {
   border: 1px solid black;
   position: relative;
 }
-.card.bottom-suit {
+.card > .bottom-suit {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  font-size: 80px;
 }
-.card.top-suit {
+.card > .top-suit {
   position: absolute;
   top: 20px;
   left: 20px;
+  font-size: 80px;
+}
+.card > #cardValue {
+  margin: auto;
+  font-size: 80px;
 }
