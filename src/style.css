@@ -21,6 +21,7 @@ body {
 .bottom {
   bottom: 20px;
   right: 20px;
+  transform: scale(1, -1);
 }
 .card > .suit {
   position: absolute;
