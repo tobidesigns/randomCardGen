@@ -24,16 +24,19 @@ const cardValue = [
 
 window.onload = function() {
   //write your code here
-  const randomNumber = Math.floor(Math.random() * 4);
-  const firstSpan = document.getElementById("top-suit");
-  const secondSpan = document.getElementById("bottom-suit");
-  if (randomNumber === 0 || randomNumber === 1) {
-    firstSpan.style.color = "red";
-    secondSpan.style.color = "red";
-  }
-  firstSpan.innerText = cardSuits[randomNumber];
-  secondSpan.innerText = cardSuits[randomNumber];
+  let randomNumber = Math.floor(Math.random() * 4);
+  console.log(randomNumber);
 
+  let colorPicker = document.getElementsByClassName("suit");
+  colorPicker[0].classList.add("top");
+  colorPicker[1].classList.add("bottom");
+
+  for (let i = 0; i < colorPicker.length; i++) {
+    if (randomNumber === 0 || randomNumber === 1) {
+      colorPicker[i].style.color = "red";
+    }
+    colorPicker[i].innerHTML = cardSuits[randomNumber];
+  }
   document.getElementById("cardValue").innerHTML =
     cardValue[Math.floor(Math.random() * 12)];
 };
